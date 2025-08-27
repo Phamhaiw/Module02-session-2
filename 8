@@ -1,0 +1,130 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number;
+
+        // Vòng lặp để đảm bảo người dùng nhập đúng số trong phạm vi
+        while (true) {
+            System.out.print("Nhập vào một số có 3 chữ số (100-999): ");
+            number = sc.nextInt();
+            if (number >= 100 && number <= 999) {
+                break;
+            } else {
+                System.out.println("Số nhập vào không hợp lệ. Vui lòng nhập lại.");
+            }
+        }
+
+        // Tách số thành hàng trăm, hàng chục và hàng đơn vị
+        int hundreds = number / 100;
+        int tens = (number % 100) / 10;
+        int units = number % 10;
+
+        System.out.print("Kết quả: ");
+
+        // Xử lý hàng trăm
+        switch (hundreds) {
+            case 1:
+                System.out.print("Một trăm ");
+                break;
+            case 2:
+                System.out.print("Hai trăm ");
+                break;
+            case 3:
+                System.out.print("Ba trăm ");
+                break;
+            case 4:
+                System.out.print("Bốn trăm ");
+                break;
+            case 5:
+                System.out.print("Năm trăm ");
+                break;
+            case 6:
+                System.out.print("Sáu trăm ");
+                break;
+            case 7:
+                System.out.print("Bảy trăm ");
+                break;
+            case 8:
+                System.out.print("Tám trăm ");
+                break;
+            case 9:
+                System.out.print("Chín trăm ");
+                break;
+        }
+
+        // Xử lý hàng chục và hàng đơn vị
+        if (tens == 0) {
+            if (units != 0) {
+                System.out.print("linh ");
+            }
+        } else if (tens == 1) {
+            System.out.print("mười ");
+        } else {
+            switch (tens) {
+                case 2:
+                    System.out.print("hai mươi ");
+                    break;
+                case 3:
+                    System.out.print("ba mươi ");
+                    break;
+                case 4:
+                    System.out.print("bốn mươi ");
+                    break;
+                case 5:
+                    System.out.print("năm mươi ");
+                    break;
+                case 6:
+                    System.out.print("sáu mươi ");
+                    break;
+                case 7:
+                    System.out.print("bảy mươi ");
+                    break;
+                case 8:
+                    System.out.print("tám mươi ");
+                    break;
+                case 9:
+                    System.out.print("chín mươi ");
+                    break;
+            }
+        }
+
+        // Xử lý hàng đơn vị
+        if (tens > 1 && units == 5) {
+            System.out.print("lăm");
+        } else if (tens > 1 && units == 1) {
+            System.out.print("mốt");
+        } else {
+            switch (units) {
+                case 1:
+                    System.out.print("một");
+                    break;
+                case 2:
+                    System.out.print("hai");
+                    break;
+                case 3:
+                    System.out.print("ba");
+                    break;
+                case 4:
+                    System.out.print("bốn");
+                    break;
+                case 5:
+                    System.out.print("năm");
+                    break;
+                case 6:
+                    System.out.print("sáu");
+                    break;
+                case 7:
+                    System.out.print("bảy");
+                    break;
+                case 8:
+                    System.out.print("tám");
+                    break;
+                case 9:
+                    System.out.print("chín");
+                    break;
+            }
+        }
+
+        System.out.println(); // Xuống dòng
+        sc.close();
+    }};
